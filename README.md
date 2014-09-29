@@ -27,8 +27,72 @@ Mint Debian installation and configuration
 
 - Run `grub-mkconf` to detect and add Windows 8.1 in GRUB.
 - Reboot to check that everything is fine both with LMDE and Windows.
+- Run `aptitude update` then `aptitude upgrade`.
+
+
+## Install softwares
+
+### From repositories
+
+**Development**
+- General development tools: `git gcc make`
+- Python: `pip python-virtualenv ipython ipython-notebook`
+- 
+**Scientific**
+- Latex: `texlive-latex-base texlive-latex-recommended texlive-latex-extra`
+- Mendeley: `mendeleydesktop`
+- Python: `python-numpy python-scipy python-sympy python-matplotlib python-h5py`
+- 
+**Misc**
+- Tools: `imagemagick emacs`
+- Education: `stellarium`
+- Entertainment: `radiotray`
+- Security: `gpg`
+
+### From the Web: download and install
+
+**Development**
+- General development tools: [Sublime Text](http://www.sublimetext.com/3)
+- 
+**Scientific**
+- Python: [Basemap](http://sourceforge.net/projects/matplotlib/files/matplotlib-toolkits/) (see Cartopy too for future projects...)
+- 
+**Misc**
+- Security: [Truecrypt](https://truecrypt.ch/)
+
 
 ## Configuration
 
-### Next step is coming soon...
+
+### System
+
+#### Adding my own Bépo keymap
+
+#### Installing additional fonts
+
+
+### Restore my dot files
+
+- [Github link]() to download and extract my .dot files (not avalaible yet!)
+
+
+### Home
+
+- Import my GPG keys
+
+
+### Shell
+
+#### Setting up the `zsh`
+
+#### Customize `zsh` and `bash` (prompt, alias, functions, ...)
+
+
+### Cinnamon
+
+#### Setting up xscreensaver
+
+#### Create shortcuts...
+
+
 
