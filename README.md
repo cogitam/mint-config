@@ -2,7 +2,9 @@ Mint Debian installation and configuration
 ==========================================
 
 **Hardware**: Laptop ASUS ROG G550JK-CN519H
+
 **OS**: Linux Mint Debian 201403 Cinnamon 64-bit
+
 *Install made from a USB key created with (Lili)[http://www.linuxliveusb.com/en/download]*
 
 ## If Windows 8.1 dual boot
