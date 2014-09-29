@@ -40,12 +40,12 @@ Mint Debian installation and configuration
 **Development**
 - General development tools: `git gcc make`
 - Python: `pip python-virtualenv ipython ipython-notebook`
-- 
+
 **Scientific**
 - Latex: `texlive-latex-base texlive-latex-recommended texlive-latex-extra`
 - Mendeley: `mendeleydesktop`
 - Python: `python-numpy python-scipy python-sympy python-matplotlib python-h5py`
-- 
+
 **Misc**
 - Tools: `imagemagick emacs`
 - Education: `stellarium`
@@ -56,10 +56,10 @@ Mint Debian installation and configuration
 
 **Development**
 - General development tools: [Sublime Text](http://www.sublimetext.com/3)
-- 
+
 **Scientific**
 - Python: [Basemap](http://sourceforge.net/projects/matplotlib/files/matplotlib-toolkits/) (see Cartopy too for future projects...)
-- 
+
 **Misc**
 - Security: [Truecrypt](https://truecrypt.ch/)
 
