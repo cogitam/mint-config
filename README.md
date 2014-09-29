@@ -5,7 +5,7 @@ Mint Debian installation and configuration
 
 **OS**: Linux Mint Debian 201403 Cinnamon 64-bit
 
-*Install made from a USB key created with (Lili)[http://www.linuxliveusb.com/en/download]*
+*Install made from a USB key created with [Lili](http://www.linuxliveusb.com/en/download)*
 
 ## If Windows 8.1 dual boot
 
