@@ -91,12 +91,13 @@ $ sudo cat bepo-intl-perso >> /usr/share/X11/xkb/symbols/fr
         </variant>
 ```
 
-#### Add Windows NTFS partitions in fstab
+#### Add Windows NTFS partitions in fstab (single user)
 
-- Get the UUIDs with `sudo blkid`
-- Add this line in `/etc/fstab` for each partition to auto-mount:
+1. Get the UUIDs with `sudo blkid`
+2. Create a mount point in `/media` for each partition and set the user as owner: `sudo chown $USER:$USER /media/YYYY`
+3. Add this line in `/etc/fstab` for each partition to auto-mount:
 ```
-UUID=XXXXXXXXXXXXX     /media/mount_name      ntfs-3g rwx,uid=1000,user,auto  0       0
+UUID=XXXXXXXXXXXXX     /media/YYYY      ntfs-3g rwx,uid=1000,user,auto  0       0
 ```
 
 #### Installing additional fonts
