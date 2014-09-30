@@ -40,13 +40,13 @@ Mint Debian installation and configuration
 
 **Development**
 - General development tools: `git gcc make`
-- Python: `pip python-virtualenv ipython ipython-notebook`
+- Python: `pip python-virtualenv virtualenvwrapper ipython ipython-notebook`
 
 **Scientific**
 - Compilers: `gfortran` 
 - Latex: `texlive-{base,fonts-extra,science,pictures,extra-utils} texlive-latex-{base,recommended,extra} cm-super`
 - Mendeley: `mendeleydesktop`
-- Python: `python-{numpy,scipy,sympy,matplotlib,h5py}`
+- Python scientific base (use `pip` for others): `python-{numpy,scipy,sympy,matplotlib}`
 - GMT: `gmt`
 
 **Misc**
