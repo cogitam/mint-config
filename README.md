@@ -107,7 +107,7 @@ UUID=XXXXXXXXXXXXX     /media/mount_name      ntfs-3g rwx,uid=1000,user,auto  0 
 
 - Restore my dot files: [Github link](https://github.com/cogitam/mint-config/tree/master/home)
 - Get [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh#the-manual-way) and configure
-- Restore my [radiotray bookmarks](https://github.com/cogitam/mint-config/blob/master/bookmarks-radiotray.xml)
+- Restore my [radiotray bookmarks](https://github.com/cogitam/mint-config/blob/master/bookmarks-radiotray.xml) in `~/.local/share/radiotray/`
 - Import my GPG keys
 
 
