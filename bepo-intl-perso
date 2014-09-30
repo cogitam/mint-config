@@ -1,0 +1,48 @@
+
+// D'après http://bepo.fr/wiki/Utilisateur:Kaze/B%C3%A9po-intl
+// Largement modifié par moi (mars 2014)
+// fr-dvorak-bepo-intl-perso
+partial alphanumeric_keys
+xkb_symbols "bepo-intl-perso" {
+    include "fr(bepo)"
+
+    // LETTRES
+
+    // W et Z sous la main gauche
+    key <AD05> { type[group1] = "FOUR_LEVEL", [ w          , W        , dead_grave          , grave           ] }; // w W ` `
+    key <AB01> { type[group1] = "FOUR_LEVEL", [ z          , Z        , backslash          , greater ] }; // z Z } >
+
+    // Reconfiguration du W et Z en È et Æ
+    key <AD11> { type[group1] = "FOUR_LEVEL", [ egrave     , Egrave   , schwa        , SCHWA             ] }; // à À     
+    key <AD12> { type[group1] = "FOUR_LEVEL", [ ae         , AE       , dead_breve   , dead_caron        ] }; // æ Æ    
+
+    // À avec le A
+    key <AC01> { [               a,            A,             agrave,             Agrave ] }; // a A à À
+
+    // SYMBOLES
+
+    // Interversion des guillemets et < >
+    key <AE02> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [ less           , 2 , guillemotleft  , leftdoublequotemark  ] }; // « 2 <  
+    key <AE03> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [ greater        , 3 , guillemotright , rightdoublequotemark ] }; // » 3 >  
+
+    // < et > sous la main gauche avec / et \
+    key <LSGT> { type[group1] = "FOUR_LEVEL", [ ecircumflex, Ecircumflex,          slash, less                 ] }; // ê Ê / <
+
+    // Dollar et dièse plus accessible
+    // (induit le déplacement du dead_currency, ©,  , dead_horn)
+    // Déplacement du   aussi pour libérer le AltGr+E
+    key <AC05> { [           comma,    semicolon,  dollar,       EuroSign] }; // , ; $  
+    key <AC06> {[               c,            C,      numbersign,          U017F ] }; // c C #  
+    key <TLDE> { [   dead_currency,    copyright,        endash,       paragraph ] }; // ¤ ©   ¶ 
+    key <AD06> { [ dead_circumflex,       exclam,     exclamdown,      dead_horn                 ] }; // ^ ! ¡  
+
+    // È alternatif en AltGr+e
+    key <AC04> { [               e,            E,        egrave,       Egrave] }; // e E è È
+
+    // POUR C****E ;-)
+
+    // Placement du point d'exclamation en AltGr+? et adaptation
+    // key <AD06> { [ dead_circumflex,       exclamdown,     questiondown, dead_horn           ] }; // ^ ¡ ¿
+    // key <AB06> { [      apostrophe,         question,           exclam,      dead_hook ] }; // ' ? !  
+ 
+};
