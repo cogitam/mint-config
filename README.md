@@ -72,7 +72,7 @@ Mint Debian installation and configuration
 
 ### System
 
-- Customize the `sudoers` file (not detailed in this repos...)
+- Customize the `sudoers` file (not detailed in this repos...). See the [Ubuntu doc](http://doc.ubuntu-fr.org/sudoers) and [sudoers manual](http://www.sudo.ws/sudo/sudoers.man.html).
 
 #### Adding my own Bépo keymap
 
