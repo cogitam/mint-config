@@ -32,6 +32,7 @@ Mint Debian installation and configuration
 - Reboot to check that everything is fine both with LMDE and Windows.
 - Run `aptitude update` then `aptitude upgrade`.
 
+*Note*: LMDE automatically add the user in `sudoers`.
 
 ## Install softwares
 
@@ -69,29 +70,35 @@ Mint Debian installation and configuration
 
 ## Configuration
 
-
 ### System
 
 #### Adding my own Bépo keymap
 
+- Add my bépo keymap in `/usr/share/X11/xkb/symbols/fr`:
+```
+$ sudo cp /usr/share/X11/xkb/symbols/fr /usr/share/X11/xkb/symbols/fr.old
+$ sudo cat bepo-intl-perso >> /usr/share/X11/xkb/symbols/fr
+```
+- Add the variant in `/usr/share/X11/xkb/rules/base.xml` and `/usr/share/X11/xkb/rules/evdev.xml` (e.g. after standard bepo), i.e. copy-paste the following line and put them after the bepo variant section:
+```
+        <variant>
+          <configItem>
+            <name>bepo-intl-perso</name>
+            <description>French (Bepo, perso)</description>
+          </configItem>
+        </variant>
+```
+
 #### Installing additional fonts
 
-
-### Restore my dot files
-
-- [Github link]() to download and extract my .dot files (not avalaible yet!)
-
+- Put the script to download them or just write this not to forget?
 
 ### Home
 
+- Restore my dot files: [Github link](https://github.com/cogitam/mint-config/tree/master/home)
+- Get [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh#the-manual-way) and configure
 - Import my GPG keys
-
-
-### Shell
-
-#### Setting up the `zsh`
-
-#### Customize `zsh` and `bash` (prompt, alias, functions, ...)
+- Restore my [radiotray bookmarks]()
 
 
 ### Cinnamon
