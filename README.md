@@ -45,7 +45,6 @@ Mint Debian installation and configuration
 **Scientific**
 - Compilers: `gfortran` 
 - Latex: `texlive-{base,fonts-extra,science,pictures,extra-utils} texlive-latex-{base,recommended,extra} cm-super`
-- Mendeley: `mendeleydesktop`
 - Python scientific base (use `pip` for others): `python-{numpy,scipy,sympy,matplotlib}`
 - GMT: `gmt`
 
@@ -53,7 +52,7 @@ Mint Debian installation and configuration
 - Tools: `imagemagick ffmpeg ghostscript redshift unrar zip unzip emacs vim zsh tree cups`
 - Education: `stellarium anki`
 - Entertainment: `radiotray vlc fortune-mod fortunes-{min,fr,es,de,it,ru}`
-- Security: `gpg`
+- Security: `gnupg`
 
 ### From the Web: download and install
 
@@ -62,6 +61,7 @@ Mint Debian installation and configuration
 
 **Scientific**
 - Python: [Basemap](http://sourceforge.net/projects/matplotlib/files/matplotlib-toolkits/) (see Cartopy too for future projects...)
+- [Mendeley](http://www.mendeley.com/download-mendeley-desktop/)
 
 **Misc**
 - Cloud: [Dropbox](https://www.dropbox.com/install?os=lnx)
