@@ -91,6 +91,14 @@ $ sudo cat bepo-intl-perso >> /usr/share/X11/xkb/symbols/fr
         </variant>
 ```
 
+#### Add Windows NTFS partitions in fstab
+
+- Get the UUIDs with `sudo blkid`
+- Add this line in `/etc/fstab` for each partition to auto-mount:
+```
+UUID=XXXXXXXXXXXXX     /media/mount_name      ntfs-3g rwx,uid=1000,user,auto  0       0
+```
+
 #### Installing additional fonts
 
 - Put the script to download them or just write this not to forget?
