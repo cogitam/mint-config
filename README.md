@@ -72,9 +72,11 @@ Mint Debian installation and configuration
 
 ### System
 
+- Customize the `sudoers` file (not detailed in this repos...)
+
 #### Adding my own Bépo keymap
 
-- Add my bépo keymap in `/usr/share/X11/xkb/symbols/fr`:
+- Add my [bépo keymap](https://github.com/cogitam/mint-config/blob/master/bepo-intl-perso) in `/usr/share/X11/xkb/symbols/fr`:
 ```
 $ sudo cp /usr/share/X11/xkb/symbols/fr /usr/share/X11/xkb/symbols/fr.old
 $ sudo cat bepo-intl-perso >> /usr/share/X11/xkb/symbols/fr
@@ -97,8 +99,8 @@ $ sudo cat bepo-intl-perso >> /usr/share/X11/xkb/symbols/fr
 
 - Restore my dot files: [Github link](https://github.com/cogitam/mint-config/tree/master/home)
 - Get [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh#the-manual-way) and configure
+- Restore my [radiotray bookmarks](https://github.com/cogitam/mint-config/blob/master/bookmarks-radiotray.xml)
 - Import my GPG keys
-- Restore my [radiotray bookmarks]()
 
 
 ### Cinnamon
