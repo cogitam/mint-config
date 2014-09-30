@@ -1,4 +1,4 @@
-# $USER.zsh-theme, based on smt, avit and others.
+# perso.zsh-theme, based on smt, avit and others.
 # Re-use of old functions from my .bashrc file.
 
 MODE_INDICATOR="%{$fg_bold[red]%}❮%{$reset_color%}%{$fg[red]%}❮❮%{$reset_color%}"
