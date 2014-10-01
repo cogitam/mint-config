@@ -92,7 +92,7 @@ $ sudo tee -a /usr/share/X11/xkb/symbols/fr < bepo-intl-perso > /dev/null
           </configItem>
         </variant>
 ```
-- Add the new variant in the keyboard list and set left Windows key as keymap switcher.
+- Add the new variant in the keyboards list and set left Windows key as keymap switcher.
 
 #### Add Windows NTFS partitions in fstab (single user)
 
@@ -109,9 +109,9 @@ UUID=XXXXXXXXXXXXX     /media/YYYY      ntfs-3g rwx,uid=1000,user,auto  0       
 
 ### Home
 
-- Restore my dot files: [Github link](https://github.com/cogitam/mint-config/tree/master/home):
+- Restore my dot files from [Github link](https://github.com/cogitam/mint-config/tree/master/home):
 ```
-cp mint-config/home/.* ~/
+cp mint-config/home/.* ~
 ```
 - Get [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh#the-manual-way) and configure, then:
 ```
@@ -124,7 +124,7 @@ cp mint-config/bookmarks-radiotray.xml ~/.local/share/radiotray/
 - Import my GPG keys
 
 
-### Interet
+### Internet
 
 #### Firefox/Iceweasel
 
