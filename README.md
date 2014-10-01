@@ -70,6 +70,8 @@ Mint Debian installation and configuration
 
 ## Configuration
 
+First of all, clone this GitHub repos: `git clone https://github.com/cogitam/mint-config.git`
+
 ### System
 
 - Customize the `sudoers` file (not detailed in this repos...). See the [Ubuntu doc](http://doc.ubuntu-fr.org/sudoers) and [sudoers manual](http://www.sudo.ws/sudo/sudoers.man.html).
@@ -79,7 +81,7 @@ Mint Debian installation and configuration
 - Add my [bépo keymap](https://github.com/cogitam/mint-config/blob/master/bepo-intl-perso) in `/usr/share/X11/xkb/symbols/fr`:
 ```
 $ sudo cp /usr/share/X11/xkb/symbols/fr /usr/share/X11/xkb/symbols/fr.old
-$ sudo cat bepo-intl-perso >> /usr/share/X11/xkb/symbols/fr
+$ sudo tee -a /usr/share/X11/xkb/symbols/fr < bepo-intl-perso > /dev/null
 ```
 - Add the variant in `/usr/share/X11/xkb/rules/base.xml` and `/usr/share/X11/xkb/rules/evdev.xml` (e.g. after standard bepo), i.e. copy-paste the following line and put them after the bepo variant section:
 ```
@@ -106,9 +108,18 @@ UUID=XXXXXXXXXXXXX     /media/YYYY      ntfs-3g rwx,uid=1000,user,auto  0       
 
 ### Home
 
-- Restore my dot files: [Github link](https://github.com/cogitam/mint-config/tree/master/home)
-- Get [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh#the-manual-way) and configure
-- Restore my [radiotray bookmarks](https://github.com/cogitam/mint-config/blob/master/bookmarks-radiotray.xml) in `~/.local/share/radiotray/`
+- Restore my dot files: [Github link](https://github.com/cogitam/mint-config/tree/master/home):
+```
+cp mint-config/home/.* ~/
+```
+- Get [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh#the-manual-way) and configure, then:
+```
+cp -r mint-config/home/.oh-my-zsh ~
+```
+- Restore my [radiotray bookmarks](https://github.com/cogitam/mint-config/blob/master/bookmarks-radiotray.xml): ```
+```
+cp mint-config/bookmarks-radiotray.xml ~/.local/share/radiotray/
+```
 - Import my GPG keys
 
 
