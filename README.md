@@ -140,9 +140,9 @@ and set my coordinates using [findgeographiccoordinates.com](http://findgeograph
 
 #### Thunderbird/Icedove
 
-- Restore everything form my current profile
-- Check or reinstall the following addons: Enigmail, ...
-- Set the path to my profile folder in `.icedove/profiles.ini`
+1. Restore everything from my current profile
+2. Set the path to my profile folder in `.icedove/profiles.ini`
+3. Check or reinstall the following addons: Enigmail, ...
 
 ### Cinnamon
 
