@@ -2,10 +2,10 @@ Mint Debian installation and configuration
 ==========================================
 
 **Hardware**: Laptop ASUS ROG G550JK-CN519H
-
 **OS**: Linux Mint Debian 201403 Cinnamon 64-bit
 
 *Install made from a USB key created with [Lili](http://www.linuxliveusb.com/en/download)*
+*NB: Debian Wheezy as no EFI file in its LiveCD (needed to boot on the key with Windows 8) and there are problems with the Geforce GTX 850M, both nouveau and Nvidia drivers, bumblebee, optimus and so on (was never able to start X...).*
 
 ## If Windows 8.1 dual boot
 
