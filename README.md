@@ -109,7 +109,7 @@ UUID=XXXXXXXXXXXXX     /media/YYYY      ntfs-3g rwx,uid=1000,user,auto  0       
 
 ### Home
 
-- Restore my dot files from [Github link](https://github.com/cogitam/mint-config/tree/master/home):
+- Restore my [dot files](https://github.com/cogitam/mint-config/tree/master/home):
 ```
 cp mint-config/home/.* ~
 ```
