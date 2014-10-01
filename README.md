@@ -92,6 +92,7 @@ $ sudo tee -a /usr/share/X11/xkb/symbols/fr < bepo-intl-perso > /dev/null
           </configItem>
         </variant>
 ```
+- Add the new variant in the keyboard list and set left Windows key as keymap switcher.
 
 #### Add Windows NTFS partitions in fstab (single user)
 
@@ -122,6 +123,20 @@ cp mint-config/bookmarks-radiotray.xml ~/.local/share/radiotray/
 ```
 - Import my GPG keys
 
+
+### Interet
+
+#### Firefox/Iceweasel
+
+- Install the following addons: Adblock plus, Ghostery, Quick Translator, Xmarks, Youtube Smart Pause, NetVideoHunter, Firebug, Web Developer
+- Configure Xmarks and synchronize bookmarks, etc.
+- Set starting page and restore tabs at startup
+- Add a few lines in Adblocks plus...
+
+#### Thunderbird/Icedove
+
+- Restore everything form my current profile
+- Set the path to my profile folder in `.icedove/profiles.ini`
 
 ### Cinnamon
 
