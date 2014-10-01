@@ -121,6 +121,11 @@ cp -r mint-config/home/.oh-my-zsh ~
 ```
 cp mint-config/bookmarks-radiotray.xml ~/.local/share/radiotray/
 ```
+- Restore my [redshift](https://github.com/cogitam/mint-config/blob/master/home/.config/redshift.conf) config file:
+```
+cp mint-config/home/.config/redshift.conf ~/.config/
+```
+and set my coordinates using [findgeographiccoordinates.com](http://findgeographiccoordinates.com/).
 - Import my GPG keys
 
 
@@ -145,7 +150,7 @@ cp mint-config/bookmarks-radiotray.xml ~/.local/share/radiotray/
 ```
 display http://www.sat24.com/image2.ashx?region=eu&ir=false
 display http://www.sat24.com/image2.ashx?region=eu&ir=true
-display wget http://c.xkcd.com/redirect/comic/now
+display http://c.xkcd.com/redirect/comic/now
 ```
 
 #### Setting up xscreensaver
