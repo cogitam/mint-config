@@ -117,7 +117,7 @@ cp mint-config/home/.* ~
 ```
 cp -r mint-config/home/.oh-my-zsh ~
 ```
-- Restore my [radiotray bookmarks](https://github.com/cogitam/mint-config/blob/master/bookmarks-radiotray.xml): ```
+- Restore my [radiotray bookmarks](https://github.com/cogitam/mint-config/blob/master/bookmarks-radiotray.xml):
 ```
 cp mint-config/bookmarks-radiotray.xml ~/.local/share/radiotray/
 ```
@@ -136,9 +136,17 @@ cp mint-config/bookmarks-radiotray.xml ~/.local/share/radiotray/
 #### Thunderbird/Icedove
 
 - Restore everything form my current profile
+- Check or reinstall the following addons: Enigmail, ...
 - Set the path to my profile folder in `.icedove/profiles.ini`
 
 ### Cinnamon
+
+- Add useful/funny launchers:
+```
+display http://www.sat24.com/image2.ashx?region=eu&ir=false
+display http://www.sat24.com/image2.ashx?region=eu&ir=true
+display wget http://c.xkcd.com/redirect/comic/now
+```
 
 #### Setting up xscreensaver
 
