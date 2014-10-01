@@ -51,7 +51,7 @@ Mint Debian installation and configuration
 - GMT: `gmt`
 
 **Misc**
-- Tools: `imagemagick ffmpeg ghostscript redshift unrar zip unzip emacs vim zsh tree cups`
+- Tools: `imagemagick ffmpeg ghostscript redshift unrar zip unzip emacs vim zsh tree cups xscreensaver xscreensaver-gl`
 - Education: `stellarium anki`
 - Entertainment: `radiotray vlc fortune-mod fortunes-{min,fr,es,de,it,ru}`
 - Security: `gnupg`
@@ -128,6 +128,19 @@ cp mint-config/bookmarks-radiotray.xml ~/.local/share/radiotray/
 cp mint-config/home/.config/redshift.conf ~/.config/
 ```
 and set my coordinates using [findgeographiccoordinates.com](http://findgeographiccoordinates.com/).
+- Configure xscreensaver (note: add my images or links to them in `Images/Screensaver`):
+```
+cp mint-config/home/.xscreensaver ~
+```
+and put the following in a script to autostart.
+```
+#!/bin/sh
+
+sleep 30
+killall cinnamon-screensaver
+sleep 10
+xscreensaver -nosplash
+```
 - Import my GPG keys
 
 
