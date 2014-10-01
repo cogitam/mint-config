@@ -128,11 +128,7 @@ cp mint-config/bookmarks-radiotray.xml ~/.local/share/radiotray/
 cp mint-config/home/.config/redshift.conf ~/.config/
 ```
 and set my coordinates using [findgeographiccoordinates.com](http://findgeographiccoordinates.com/).
-- Configure xscreensaver (note: add my images or links to them in `Images/Screensaver`):
-```
-cp mint-config/home/.xscreensaver ~
-```
-and put the following in a script to autostart.
+- Add xscreensaver in autostart (note: add my images or links to them in `Images/Screensaver`) with the following:
 ```
 #!/bin/sh
 
