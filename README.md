@@ -164,6 +164,7 @@ display http://www.sat24.com/image2.ashx?region=eu&ir=true
 display http://c.xkcd.com/redirect/comic/now
 ```
 and my [Satellite Live View](https://github.com/cogitam/mint-config/blob/master/satellite-live-view.sh) script.
+
 *NB, optional*: first argument (`fr`) for region, second one time span in hours (6) and third one in 1/100th of a second for animation delay (20)
 
 #### Setting up xscreensaver
