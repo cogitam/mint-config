@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# [x] Todo: doesn't work just after midnight UTC (anyway, we get optical images...) -> done!
-
 if [ ! -d .sat24-images ]; then
 	mkdir .sat24-images
 fi
@@ -22,7 +20,7 @@ if [ ! -z $2 ]; then
 else
 	time_span=6 # 72 images in the past = 72*5 min = 6*12*5 min = 6 hours
 fi
-time_span=$(( time_span * 12 ))
+nbimax=$(( time_span * 12 ))
 
 cur_date=$(date -u +%Y%m%d) # UTC
 cur_hour=$(date -u +%H) # UTC
@@ -38,8 +36,8 @@ done
 
 nbi=0
 
-# Get $nbmax images in the past
-while [ $nbi -lt $time_span ]
+# Get $nbimax images in the past
+while [ $nbi -lt $nbimax ]
 do
 	# We cross midnight UTC
 	if [ $cur_hour -lt 0 ]; then
@@ -59,7 +57,7 @@ do
 		fi
 		cur_min=$(( cur_min - 5 ))
 		nbi=$(( nbi+1 ))
-		if [ $nbi -ge $time_span ]; then
+		if [ $nbi -ge $nbimax ]; then
 			break
 		fi
 	done
@@ -67,15 +65,9 @@ do
 	cur_hour=$(( cur_hour - 1 ))
 done
 
-# Delete old images
-if [ $time_span -eq 288 ]; then
-	# Remove files older than 1 day
-	find .sat-*-$region.jpg -mtime +1 -exec echo {} \; # rm -f {} \;
-else
-	# Only delete images older than XXh to save time and be nice with sat24.com
-	duration_min=$(( time_span * 5 ))
-	find .sat-*-$region.jpg -mmin +$duration_min -exec rm -f {} \;
-fi
+# Only delete images older than XXh
+duration_min=$(( nbimax * 5 ))
+find .sat-*-$region.jpg -mmin +$duration_min -exec rm -f {} \;
 
 # convert -delay 10 -loop 0 .sat-*.jpg .sat-now-animated.gif
 # Image delay in 1e-3 seconds
