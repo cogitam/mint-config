@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Todo: doesn't work just after midnight UTC (anyway, we get optical images...)
 
@@ -7,8 +7,8 @@ cur_hour=$(date -u +%H) # UTC
 cur_min=$(date +%M)
 cur_min=$(printf '%d' "$cur_min") # Remove first 0 if needed
 
-# Start from 00, 15, 30 or 45 minutes
-while [ $cur_min != 0 ] && [ $cur_min != 15 ] && [ $cur_min != 30 ] && [ $cur_min != 45 ]
+# Start from 05, 10, 15, 20, 25, ...
+while [ ${cur_min:(-1):1} != 0 ] && [ ${cur_min:(-1):1} != 5 ]
 do
 	cur_min=$(( cur_min - 1 ))
 	cur_min=$(printf '%d' "$cur_min")
