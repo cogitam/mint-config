@@ -163,6 +163,7 @@ display http://www.sat24.com/image2.ashx?region=eu&ir=false
 display http://www.sat24.com/image2.ashx?region=eu&ir=true
 display http://c.xkcd.com/redirect/comic/now
 ```
+and my [Live Satellite View](https://github.com/cogitam/mint-config/blob/master/satellite-gif.sh) script (argument `fr` or `eu`)
 
 #### Setting up xscreensaver
 
