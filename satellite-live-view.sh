@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Todo: doesn't work just after midnight UTC (anyway, we get optical images...)
+# [x] Todo: doesn't work just after midnight UTC (anyway, we get optical images...) -> done!
 
 if [ ! -d .sat24-images ]; then
 	mkdir .sat24-images
@@ -10,8 +10,19 @@ cd .sat24-images
 if [ ! -z $1 ]; then
 	region=$1
 else
-	region="fr"	
+	region="fr"
 fi
+
+# Time span in hours
+if [ ! -z $2 ]; then
+	time_span=$2
+	if [ $time_span -gt 24 ]; then
+		time_span=24 # Set the limit at 24h to avoid huge downloads
+	fi
+else
+	time_span=6 # 72 images in the past = 72*5 min = 6*12*5 min = 6 hours
+fi
+time_span=$(( time_span * 12 ))
 
 cur_date=$(date -u +%Y%m%d) # UTC
 cur_hour=$(date -u +%H) # UTC
@@ -25,34 +36,52 @@ do
 	cur_min=$(printf '%d' "$cur_min")
 done
 
-c=0
+nbi=0
 
-# Get 72 images in the past (72*5min = 6*12*5min = 6 hours)
-while [ $c -lt 72 ]
+# Get $nbmax images in the past
+while [ $nbi -lt $time_span ]
 do
+	# We cross midnight UTC
+	if [ $cur_hour -lt 0 ]; then
+		cur_hour=23
+		cur_date=$(date -d "$cur_date - 1 day" -u +%Y%m%d)
+	fi
+
 	while [ $cur_min -ge 0 ]
 	do
 		cur_time=$(printf '%d%02d%02d' "$cur_date" "$cur_hour" "$cur_min")
-		# echo $cur_time
-		if [ ! -e .sat-$cur_time-$1.jpg ]; then
+		if [ ! -e .sat-$cur_time-$region.jpg ]; then
 			wget "http://www.sat24.com/image2.ashx?region=$region&time=$cur_time&type=sat5min&ir=false" -O .sat-$cur_time-$region.jpg
+			# Give the correct date to the file
+			touch_time=$(printf '%d %02d%02d' "$cur_date" "$cur_hour" "$cur_min")
+			touch_time=$(date -d "$touch_time UTC" +"%Y%m%d %H%M")
+			touch --date "$touch_time" .sat-$cur_time-$region.jpg
 		fi
 		cur_min=$(( cur_min - 5 ))
-		c=$(( c+1 ))
+		nbi=$(( nbi+1 ))
+		if [ $nbi -ge $time_span ]; then
+			break
+		fi
 	done
 	cur_min=55
 	cur_hour=$(( cur_hour - 1 ))
 done
 
+# Delete old images
+if [ $time_span -eq 288 ]; then
+	# Remove files older than 1 day
+	find .sat-*-$region.jpg -mtime +1 -exec echo {} \; # rm -f {} \;
+else
+	# Only delete images older than XXh to save time and be nice with sat24.com
+	duration_min=$(( time_span * 5 ))
+	find .sat-*-$region.jpg -mmin +$duration_min -exec rm -f {} \;
+fi
+
 # convert -delay 10 -loop 0 .sat-*.jpg .sat-now-animated.gif
 # Image delay in 1e-3 seconds
-if [ ! -z $2 ]; then
-	frame_length=$2
+if [ ! -z $3 ]; then
+	frame_length=$3
 else
 	frame_length=20
 fi
 animate -delay $frame_length .sat-*-$region.jpg
-
-# rm -f .sat-*.jpg
-# Only delete images older than 6h to save time and be nice with sat24.com
-find .sat-*-$region.jpg -mmin +360 -exec rm -f {} \;
