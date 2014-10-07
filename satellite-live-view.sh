@@ -23,15 +23,13 @@ fi
 nbimax=$(( time_span * 12 ))
 
 cur_date=$(date -u +%Y%m%d) # UTC
-cur_hour=$(date -u +%H) # UTC
-cur_min=$(date +%M)
-cur_min=$(printf '%d' "$cur_min") # Remove first 0 if needed
+cur_hour=$(date -u +%-H) # UTC without zeros filling
+cur_min=$(date +%-M) # without zeros filling
 
-# Start from 05, 10, 15, 20, 25, ...
-while [ ${cur_min:(-1):1} != 0 ] && [ ${cur_min:(-1):1} != 5 ]
+# Start from 00, 05, 10, 15, 20, 25, ...
+while (( $cur_min % 5 ))
 do
 	cur_min=$(( cur_min - 1 ))
-	cur_min=$(printf '%d' "$cur_min")
 done
 
 nbi=0
@@ -47,11 +45,11 @@ do
 
 	while [ $cur_min -ge 0 ]
 	do
-		cur_time=$(printf '%d%02d%02d' "$cur_date" "$cur_hour" "$cur_min")
+		cur_time=$(printf '%s%02d%02d' "$cur_date" "$cur_hour" "$cur_min")
 		if [ ! -e .sat-$cur_time-$region.jpg ]; then
 			wget "http://www.sat24.com/image2.ashx?region=$region&time=$cur_time&type=sat5min&ir=false" -O .sat-$cur_time-$region.jpg
 			# Give the correct date to the file
-			touch_time=$(printf '%d %02d%02d' "$cur_date" "$cur_hour" "$cur_min")
+			touch_time=$(printf '%s %02d%02d' "$cur_date" "$cur_hour" "$cur_min")
 			touch_time=$(date -d "$touch_time UTC" +"%Y%m%d %H%M")
 			touch --date "$touch_time" .sat-$cur_time-$region.jpg
 		fi
