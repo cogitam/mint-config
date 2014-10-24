@@ -19,7 +19,7 @@ Mint Debian installation and configuration
 - Disable Secure Boot
 - Save the UEFI partition (from a LiveCD), use `blkid` to find it:
 ```
-# dd if=/dev/sdXx of=uefi-partition.save
+# dd if=/dev/sdxX of=uefi-partition.save
 ```
 - Free some space (reduce Windows OS partition)
 - Create big NTFS partitions in Windows for data
