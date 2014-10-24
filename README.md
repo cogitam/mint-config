@@ -9,7 +9,7 @@ Mint Debian installation and configuration
 
 *NB: Debian Wheezy (sept. 2014) as no EFI file in its LiveCD (needed to boot on the key with Windows 8) and there are problems with the Geforce GTX 850M, both nouveau and Nvidia drivers, bumblebee, optimus and so on (was never able to start X...).*
 
-**Does not work, to fix**:
+**Do not work, to fix**:
 - No two-fingers scroll with the touchpad; no double click to copy-paste (really annoying...)
 - No sound from the small additional subwoofer provided by Asus
 
