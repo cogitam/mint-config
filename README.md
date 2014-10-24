@@ -55,6 +55,7 @@ Mint Debian installation and configuration
 - Education: `stellarium anki`
 - Entertainment: `radiotray vlc fortune-mod fortunes-{min,fr,es,de,it,ru}`
 - Security: `gnupg`
+- Fonts: `fonts-crosextra-carlito fonts-crosextra-caladea` (replace µsoft Calibri and Cambria)
 
 ### From the Web: download and install
 
@@ -138,15 +139,16 @@ sleep 10
 xscreensaver -nosplash
 ```
 - Import my GPG keys
-
+- Setup and configure Dropbox (+ Dropbox secure)
 
 ### Internet
 
 #### Firefox/Iceweasel
 
-- Install the following addons: Adblock plus, Ghostery, Quick Translator, Xmarks, Youtube Smart Pause, NetVideoHunter, Firebug, Web Developer
+- Install the following addons: Adblock plus, Ghostery, Quick Translator, Xmarks, YouTube Smart Pause, YouTube High Definition, NetVideoHunter *and/or* Youtube and more - Easy Video Downloader, Firebug, Web Developer
+- Install additional dictionaries
 - Configure Xmarks and synchronize bookmarks, etc.
-- Set starting page and restore tabs at startup
+- Set starting page and restore tabs at startup, enable text research when typing
 - Add a few lines in Adblocks plus...
 
 #### Thunderbird/Icedove
@@ -170,6 +172,5 @@ and my [Satellite Live View](https://github.com/cogitam/mint-config/blob/master/
 #### Setting up xscreensaver
 
 #### Create shortcuts...
-
 
 
