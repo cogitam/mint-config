@@ -13,7 +13,7 @@ Mint Debian installation and configuration
 - No two-fingers scroll and no simultaneous-click to paste after copy with the touchpad (really annoying...)
 - No sound from the small additional subwoofer provided by Asus
 
-** Things to try**:
+**Things to try**:
 - Touchpad: this is an Elantech touchpad, try [this link](https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1166442/+index?comments=all) (comment #137)
 
 ## If Windows 8.1 dual boot
