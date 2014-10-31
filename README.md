@@ -173,6 +173,12 @@ and my [Satellite Live View](https://github.com/cogitam/mint-config/blob/master/
 
 *NB, optional*: first argument (default `fr`, try `eu`) for region, second one time span in hours (`6`) and third one in 1/100th of a second for animation delay (`20`)
 
+- Add brightness control:
+
+1. Install `xbacklight`
+2. Set `Alt+F5` and `Alt+F6` as `xbacklight -steps 1 -dec 10` and `xbacklight -steps 1 -inc 10` respectively
+3. Install Brightness applet
+
 #### Setting up xscreensaver
 
 #### Create shortcuts...
