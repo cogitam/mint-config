@@ -175,3 +175,14 @@ function corename()   # Get name of app that created a corefile.
     done
 }
 
+function pdfcompress()
+{
+    help='pdfcompress input.pdf [screen|ebook|*printer|prepress]'
+    if [ -z $1 ]; then echo $help; return 1; fi
+
+    file=$1
+    level='printer' # screen, ebook, printer, prepress
+    if [ ! -z $2 ]; then level=$2; fi
+
+    gs -q -dSAFER -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -dPDFSETTINGS=/$level -sOUTPUTFILE=${file/.pdf/-compress.pdf} -f $file
+}
