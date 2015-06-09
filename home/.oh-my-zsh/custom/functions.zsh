@@ -180,9 +180,10 @@ function pdfcompress()
     help='pdfcompress input.pdf [screen|ebook|*printer|prepress]'
     if [ -z $1 ]; then echo $help; return 1; fi
 
-    file=$1
+    filename="${1%.*}"
+    ext="${1##*.}" # To avoid problems with upper/lower case in extension
     level='printer' # screen, ebook, printer, prepress
     if [ ! -z $2 ]; then level=$2; fi
 
-    gs -q -dSAFER -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -dPDFSETTINGS=/$level -sOUTPUTFILE=${file/.pdf/-compress.pdf} -f $file
+    gs -q -dSAFER -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -dPDFSETTINGS=/$level -sOUTPUTFILE=${filename}-compress.$ext -f $1
 }
