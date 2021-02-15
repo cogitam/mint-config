@@ -20,7 +20,8 @@ if [ ! -z $2 ]; then
 		time_span=24 # Set the limit at 24h to avoid huge downloads
 	fi
 else
-	time_span=6 # 72 images in the past = 72*5 min = 6*12*5 min = 6 hours
+	time_span=6 # 24 images in the past: 24*15 min = 6*4*15 min = 6 hours
+	# used to be 72 images in the past: 72*5 min = 6*12*5 min = 6 hours
 fi
 nbimax=$(( time_span * 12 ))
 
@@ -55,19 +56,23 @@ do
 	while [ $cur_min -ge 0 ]
 	do
 		cur_time=$(printf '%s%02d%02d' "$cur_date" "$cur_hour" "$cur_min")
-		echo $cur_time
-		if [ ! -e sat-$cur_time-$region.jpg ]; then
+		filename="sat-$cur_time-$region.jpg"
+		#echo $cur_time
+		if [ ! -e $filename ]; then
 			#wget "http://www.sat24.com/image2.ashx?region=$region&time=$cur_time&type=sat5min&ir=false" -O .sat-$cur_time-$region.jpg
-			echo sat-$cur_time-$region.jpg
-			wget "https://fr.sat24.com/image?type=visual5${HD}Complete&region=$region&timestamp=$cur_time&ir=false" -O sat-$cur_time-$region.jpg
-			# Give the correct date to the file
-			if [ -s sat-$cur_time-$region.jpg ]; then
+			#echo $filename
+			wget "https://fr.sat24.com/image?type=visual5${HD}Complete&region=$region&timestamp=$cur_time&ir=false" -O $filename
+			# Check the file size
+			actualsize=$(wc -c < $filename)
+			#if [ -s $filename ]; then
+			if [ $actualsize -ge 8092 ]; then
+				# Give the correct date to the file
 				touch_time=$(printf '%s %02d%02d' "$cur_date" "$cur_hour" "$cur_min")
 				touch_time=$(date -d "$touch_time UTC" +"%Y%m%d %H%M")
-				touch --date "$touch_time" sat-$cur_time-$region.jpg
+				touch --date "$touch_time" $filename
 			else
-				# Empty file: nothing was downloaded
-				rm -f sat-$cur_time-$region.jpg
+				# Empty file: no picture was downloaded
+				rm -f $filename
 			fi
 		fi
 		cur_min=$(( cur_min - 15 )) # used to be every 5 minutes
